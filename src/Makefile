@@ -6,7 +6,7 @@ all: CBASE
 	@echo ===== All CBASE modules are Made =====
 	@echo
 
-clean: CBASE
+clean: CLCBASE
 	@echo
 	@echo ===== All CBASE modules are Cleaned =====
 	@echo
