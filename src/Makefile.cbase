@@ -1,0 +1,63 @@
+#
+#
+#  Edit History:
+#
+#
+
+
+DEV_HOME=$(APP_DIR)
+
+
+LIB_DIR=$(DEV_HOME)/lib
+EXT_LIB_DIR=$(DEV_HOME)/extlib/ext_lib/lib
+OBJ_DIR=$(DEV_HOME)/obj
+BIN_DIR=$(DEV_HOME)/bin
+SRC_DIR=$(DEV_HOME)/src
+
+INCL = -I/usr/include   \
+       -I$(DEV_HOME)/include 
+
+
+
+DEP_CMN_LIBS   = ${LIB_DIR}/libCmn.a      
+
+DEP_BASE_LIBS = $(DEP_CMN_LIBS)
+
+
+DEP_JSON_LIBS    =
+
+
+LINK_PMS_LIBS = -L${DEV_HOME}/lib 
+
+LINK_SYS_LIBS = -lpthread -lz -lm -ldl -lxml2 -lresolv
+
+
+LINK_CMN_LIBS  = -L${DEV_HOME}/lib  
+
+LINK_BASE_LIBS =  $(LINK_CMN_LIBS)  $(LINK_SYS_LIBS)
+
+LINK_JSON_LIBS  =
+
+
+
+
+
+#-----------------------------------------------------
+#             Gcc options 
+#-----------------------------------------------------
+
+GCC_OPTIONS= -O2 -Waddress -Warray-bounds \
+           -Wchar-subscripts -Wimplicit-int -Wimplicit-function-declaration \
+           -Wcomment -Wformat -Wmain -Wmissing-braces -Wnonnull -Wparentheses \
+           -Wpointer-sign -Wreturn-type -Wsequence-point \
+           -Wsign-compare -Wstrict-aliasing -Wstrict-overflow=1 \
+           -Wswitch -Wtrigraphs -Wuninitialized \
+           -Wunknown-pragmas -Wunused-function -Wunused-label -Wunused-value
+
+CFLAGS=$(INCL) -c $(GCC_OPTIONS)
+CFLAGS2=$(CFLAGS) -fPIC
+CC=gcc -g
+
+AR=ar
+
+COMPILER=compile
