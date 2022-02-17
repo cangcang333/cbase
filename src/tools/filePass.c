@@ -12,7 +12,6 @@
  *
  *  Edit History:
  *
- *    2014/03/23 - Created by qzfan.
  */
 
  /** @file
