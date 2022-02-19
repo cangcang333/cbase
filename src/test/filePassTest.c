@@ -10,12 +10,6 @@ int main(int argc, char ** argv)
     printf("argc: %d\n", argc);
     int ret = 0;
 
-    if (argc != 4) {
-        printHelp();
-
-        return -1;
-    }
-
     printf("\n");
 
      return 0;
