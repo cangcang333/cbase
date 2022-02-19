@@ -14,7 +14,8 @@ clean: CLCBASE
 
 CBASE: makeCmn  \
        makeTools  \
-       makeTest
+       makeTest  \
+       makeGeektimeC
 
 CLCBASE: cleanCmn  \
 	 cleanTools  \
@@ -31,6 +32,13 @@ makeTools:
 
 makeTest:
 	@cd test && make
+
+
+makeGeektimeC:
+	@cd geektimeC && make
+
+
+
 # clean
 
 cleanCmn:
